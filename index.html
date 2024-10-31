@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="IMAGES/SEGO LOGO trans.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-color: #ff69b4;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            width: 320px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-container h2 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 16px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .login-container input[type="text"]::placeholder,
+        .login-container input[type="password"]::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            color: #ff69b4;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        .login-container input[type="submit"]:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .for {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .for:hover {
+            color: #ff69b4;
+            text-decoration: underline;
+        }
+
+        /* Floating Heart Animation */
+        .floating-heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            transform: rotate(45deg);
+            animation: float 6s ease-in infinite;
+            opacity: 0.8;
+        }
+
+        .floating-heart::before,
+        .floating-heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+
+        .floating-heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .floating-heart::after {
+            top: 0;
+            left: -10px;
+        }
+
+        /* Animation for floating hearts */
+        @keyframes float {
+            -900% {
+                transform: translateY(0) scale(0.9);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-100px) scale(1.1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-200px) scale(0.9);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Welcome Lesego!</h2>
+        <form onsubmit="return validateForm(event)" action="home.html"get">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <br>
+        <a class="for" href="Reset.html">Forgot Password</a>
+    </div>
+    <div class="floating-heart" style="top: 80%; left: 20%;"></div>
+    <div class="floating-heart" style="top: 85%; left: 50%;"></div>
+    <div class="floating-heart" style="top: 70%; left: 70%;"></div>
+    <div class="floating-heart" style="top: 90%; left: 30%;"></div>
+     
+     <script>
+        // JavaScript to dynamically add floating hearts
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 100 + 'vh';
+            heart.style.animationDuration = Math.random() * 3 + 5 + 's';
+            document.body.appendChild(heart);
+
+            // Remove the heart after animation completes
+            setTimeout(() => document.body.removeChild(heart), 8000);
+        }
+
+        // Create floating hearts every 2 seconds
+        setInterval(createFloatingHeart, 2000);
+    </script>
+</body>
+</html>
