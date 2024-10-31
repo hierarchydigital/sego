@@ -305,12 +305,14 @@ body {
         .pricing-section {
             display: none; /* Hide by default */
             margin-bottom: 40px;
+            
         }
     
         .pricing-section.active {
             display: flex;
             flex-wrap: wrap;
             justify-content: center; /* Center items on small screens */
+            background-color: #FF69B4;
         }
     
         .pricing-box {
