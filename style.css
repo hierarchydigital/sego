@@ -1033,3 +1033,15 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
+.apple{
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    margin: auto;
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
